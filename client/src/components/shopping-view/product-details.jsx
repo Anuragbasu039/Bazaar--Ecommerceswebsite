@@ -147,12 +147,12 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
           </div>
           <div className="mt-5 mb-5">
             {productDetails?.totalStock === 0 ? (
-              <Button className="w-full opacity-60 cursor-not-allowed">
+              <Button className="w-full opacity-60 cursor-not-allowed bg-amber-400">
                 Out of Stock
               </Button>
             ) : (
               <Button
-                className="w-full"
+                className="w-full bg-amber-400"
                 onClick={() =>
                   handleAddToCart(
                     productDetails?._id,
@@ -210,6 +210,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
               <Button
                 onClick={handleAddReview}
                 disabled={reviewMsg.trim() === ""}
+                className="bg-amber-400"
               >
                 Submit
               </Button>

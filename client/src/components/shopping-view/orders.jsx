@@ -89,6 +89,7 @@ function ShoppingOrders() {
                           onClick={() =>
                             handleFetchOrderDetails(orderItem?._id)
                           }
+                          className="bg-amber-400"
                         >
                           View Details
                         </Button>

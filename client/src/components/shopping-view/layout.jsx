@@ -3,10 +3,10 @@ import ShoppingHeader from "./header";
 
 function ShoppingLayout() {
   return (
-    <div className="flex flex-col bg-white overflow-hidden">
+    <div className="flex flex-col bg-orange-100 overflow-hidden">
       {/* common header */}
       <ShoppingHeader />
-      <main className="flex flex-col w-full">
+      <main className="flex flex-col w-full h-full">
         <Outlet />
       </main>
     </div>

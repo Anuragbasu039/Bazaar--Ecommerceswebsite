@@ -83,7 +83,7 @@ function UserCartItemsContent({ cartItem }) {
         <div className="flex items-center gap-2 mt-1">
           <Button
             variant="outline"
-            className="h-8 w-8 rounded-full"
+            className="h-8 w-8 rounded-full bg-amber-400"
             size="icon"
             disabled={cartItem?.quantity === 1}
             onClick={() => handleUpdateQuantity(cartItem, "minus")}
@@ -94,7 +94,7 @@ function UserCartItemsContent({ cartItem }) {
           <span className="font-semibold">{cartItem?.quantity}</span>
           <Button
             variant="outline"
-            className="h-8 w-8 rounded-full"
+            className="h-8 w-8 rounded-full bg-amber-400"
             size="icon"
             onClick={() => handleUpdateQuantity(cartItem, "plus")}
           >

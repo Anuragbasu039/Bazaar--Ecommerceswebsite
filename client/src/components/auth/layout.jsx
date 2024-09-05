@@ -1,11 +1,13 @@
 import { Outlet } from "react-router-dom";
-
+import bazaar from "../../assets/bazaar.png"
 function AuthLayout() {
   return (
     <div className="flex min-h-screen w-full">
-      <div className="hidden lg:flex items-center justify-center bg-black w-1/2 px-12">
+      <div className="hidden lg:flex items-center justify-center bg-orange-100 w-1/2 px-12">
         <div className="max-w-md space-y-6 text-center text-primary-foreground">
-          <h1 className="text-4xl font-extrabold tracking-tight">
+          <h1 className="text-4xl font-extrabold tracking-tight text-amber-400">
+            <img className="w-25" src={bazaar}
+            alt="" />
             Welcome to ECommerce Shopping
           </h1>
         </div>

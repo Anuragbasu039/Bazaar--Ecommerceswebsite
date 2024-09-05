@@ -40,10 +40,11 @@ function AdminProductTile({
               setCurrentEditedId(product?._id);
               setFormData(product);
             }}
+            className="bg-amber-400"
           >
             Edit
           </Button>
-          <Button onClick={() => handleDelete(product?._id)}>Delete</Button>
+          <Button onClick={() => handleDelete(product?._id)} className="bg-amber-400">Delete</Button>
         </CardFooter>
       </div>
     </Card>
