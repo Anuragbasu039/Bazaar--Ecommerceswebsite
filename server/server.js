@@ -31,7 +31,7 @@ const _dirname = path.resolve();
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://bazaar-ecommerceswebsite.onrender.com",
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
