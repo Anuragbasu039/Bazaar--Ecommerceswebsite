@@ -1,3 +1,5 @@
+require('dotenv').config(); // Load environment variables from .env
+
 const express = require("express");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
@@ -14,19 +16,18 @@ const shopSearchRouter = require("./routes/shop/search-routes");
 const shopReviewRouter = require("./routes/shop/review-routes");
 
 const commonFeatureRouter = require("./routes/common/feature-routes");
+const path = require("path");
 
-//create a database connection -> u can also
-//create a separate file for this and then import/use that file here
-
+// Use MongoDB connection string from .env file
 mongoose
-  .connect(
-    "mongodb+srv://anuragbasu039:tju23d4hid@cluster1.tpw1a.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1"
-  )
+  .connect(process.env.MONGODB_URI)
   .then(() => console.log("MongoDB connected"))
   .catch((error) => console.log(error));
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+const _dirname = path.resolve();
 
 app.use(
   cors({
@@ -57,5 +58,10 @@ app.use("/api/shop/search", shopSearchRouter);
 app.use("/api/shop/review", shopReviewRouter);
 
 app.use("/api/common/feature", commonFeatureRouter);
+
+app.use(express.static(path.join(_dirname, "/client/dist")))
+app.get('*', (_, res) => {
+  res.sendFile(path.resolve(_dirname, "client", "dist", "index.html"))
+})
 
 app.listen(PORT, () => console.log(`Server is now running on port ${PORT}`));
